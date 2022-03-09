@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arrays_Aufgabe1", "Arrays_A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2D_Arrays_Aufgaben", "2D_Arrays_Aufgaben\2D_Arrays_Aufgaben.csproj", "{46F40E68-2CBA-491A-90D1-66BCBD29F921}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BubbleSystem", "BubbleSystem\BubbleSystem.csproj", "{0C5ECE74-284B-4944-A1E7-D5B7D7AD8AF0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{46F40E68-2CBA-491A-90D1-66BCBD29F921}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46F40E68-2CBA-491A-90D1-66BCBD29F921}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46F40E68-2CBA-491A-90D1-66BCBD29F921}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C5ECE74-284B-4944-A1E7-D5B7D7AD8AF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C5ECE74-284B-4944-A1E7-D5B7D7AD8AF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C5ECE74-284B-4944-A1E7-D5B7D7AD8AF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C5ECE74-284B-4944-A1E7-D5B7D7AD8AF0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -41,6 +41,7 @@ namespace Arrays_Aufgabe1
                 Console.WriteLine(namen[Ausgabe] + "\tNote:" + noten[Ausgabe]);
                
             }
+            
 
             Console.WriteLine("Der Notenschnitt beträgt:{0:F2}",Notenschnitt / AnzahlSchüler);
         }
