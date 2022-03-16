@@ -6,46 +6,53 @@ namespace BubbleSystem
     {
         static void Main(string[] args)
         {
-            int[] daten = { 45, 10, 15, 4 };
-            Console.WriteLine(daten[0]);
-            Console.WriteLine(daten[1]);
-            Console.WriteLine(daten[2]);
-            Console.WriteLine(daten[3]);
-            Console.WriteLine();
-            //get beamed by Monkey Squad
-
-            int index = 0;
-            for (int i = daten.Length-1; index < i; index++)
+            int[] daten = { 45, 10, 15, 4, 2, 78, 1, 0, 69 };
+            foreach (int i in daten)
             {
-               
-               
-               if (daten[index] > daten[index + 1])
+                Console.WriteLine(i);
+
+            }
+            Console.WriteLine();
+
+            //get beamed by Monkey Squad
+            int counter = 0;
+            do
+            {
+                int index = 0;
+                for (int i = daten.Length - 1; index < i; index++)
                 {
 
-                    int buffer;
 
-                    buffer = daten[index + 1];
-                    daten[index + 1] = daten[index];
-                    daten[index] = buffer;
+                    if (daten[index] > daten[index + 1])
+                    {
 
- 
+                        int buffer;
+
+                        buffer = daten[index + 1];
+                        daten[index + 1] = daten[index];
+                        daten[index] = buffer;
+
+
+
+
+                    }
 
 
                 }
-               
 
-            }
+                counter++;
 
-            
+                foreach (int i in daten)
+                {
+                    Console.WriteLine(i);
 
-            Console.WriteLine(daten[0]);
-            Console.WriteLine(daten[1]);
-            Console.WriteLine(daten[2]);
-            Console.WriteLine(daten[3]);
-            Console.WriteLine();
-            Console.WriteLine(index);
+                }
+                
+                Console.ReadKey();
+                Console.Clear();
 
 
+            } while (counter != daten.Length-1);
         }
-    }
+    }   
 }
