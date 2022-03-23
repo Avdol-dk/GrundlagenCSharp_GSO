@@ -96,10 +96,9 @@ namespace Methoden_Aufgabe
                     return anz_zeichen;
 
                 }
-                Console.WriteLine("wollen sie das Progamm wiederholen? 1 ist ja und 2 nein");
+                
 
-
-
+                //beendet
             }
 
         }
