@@ -6,42 +6,93 @@ namespace Methoden_Aufgabe
     {
         static void Main(string[] args)
         {
-            int anz_zeichen = 0;
-            int durchlauf = 0;
+            int zahl = 0;
 
+            int anz_zeichen = 0;
             Console.WriteLine("geben Sie einen Text ein");
 
-            string Text = Console.ReadLine();
+            bool Texterror = false;
+            string textsave = "a";
+
+            do
+            {
+                string Text = Console.ReadLine();
+              
+                    
+
+
+                        if (Text == "")
+                        {
+                            Console.WriteLine("Die Eingabe war inkorrekt");
+                            Texterror = true;
+
+
+                        }
+                        else
+                        {
+                            Console.WriteLine("korrekte eingabe!");
+                            Texterror = false;
+                            textsave = Text;
+
+                        }
+                
+
+            } while (Texterror == true);
+
+
             Console.WriteLine("geben sie an, wie oft es durchlaufen werden soll");
-            durchlauf = Convert.ToInt32(Console.ReadLine());
-            
+
+            bool durchlauferror = false;
+            int durchlaufsave = 0;
+
+            do
+            {
+                string durchlauf = Console.ReadLine();
+
+
+
+                if (int.TryParse(durchlauf, out zahl))
+                {
+                    Console.WriteLine("Es wird {0} mal durchlaufen.", durchlauf);
+                    durchlauferror = false;
+                    durchlaufsave = int.Parse(durchlauf);
+
+                }
+                else
+                {
+                    Console.WriteLine("geben sie etwas richtiges  für den Durchlauf ein!");
+                    durchlauferror = true;
+
+                }
+
+
+            } while (durchlauferror == true);
+            Console.WriteLine("sie haben alle werte eingegeben, führen sie fort indem sie eine beliebige Taste drücken.");
+            Console.ReadKey();
+
             Console.Clear();
 
-            anz_zeichen = ausgabeTextMalX(Text,durchlauf);
+            anz_zeichen = ausgabeTextMalX(textsave, durchlaufsave);
 
             Console.Write("\nAnzahl der Buchstaben: {0}", anz_zeichen);
-            
-
-            
-            
-
-        }
-
-      
-        static int ausgabeTextMalX(string i, int x)
-        {
 
 
-            for(int dl = 0; dl < x;dl++)
+
+            static int ausgabeTextMalX(string i, int x)
             {
-                Console.WriteLine(i);
-            }
-            int anz_zeichen = i.Length * x;
 
-            return anz_zeichen;
-         
+
+                for (int dl = 0; dl < x; dl++)
+                {
+                    Console.WriteLine(i);
+                }
+                int anz_zeichen = i.Length * x;
+
+                return anz_zeichen;
+
+            }
+
         }
 
     }
-
 }
