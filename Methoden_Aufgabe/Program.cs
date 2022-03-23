@@ -6,8 +6,7 @@ namespace Methoden_Aufgabe
     {
         static void Main(string[] args)
         {
-            bool EingabeEingabe = false;
-            do
+
             {
                 int zahl = 0;
 
@@ -98,29 +97,11 @@ namespace Methoden_Aufgabe
 
                 }
                 Console.WriteLine("wollen sie das Progamm wiederholen? 1 ist ja und 2 nein");
-                
-                bool EingabeError = false;
-                string Eingabe;
 
-                do
-                {
-                    Eingabe = Console.ReadLine();
-                    switch(Eingabe)
-                    {
-                        case "1":
-                            
-                                EingabeEingabe = true;
-                            break;
-                            
-                        default:
-                            
-                                Console.Clear();
-                            break;
-                    }
-                } while (EingabeError == false);
-            } while (EingabeEingabe == true);
+
+
+            }
 
         }
-
     }
 }
