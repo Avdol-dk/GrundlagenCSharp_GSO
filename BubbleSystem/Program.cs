@@ -6,7 +6,7 @@ namespace BubbleSystem
     {
         static void Main(string[] args)
         {
-            int[] daten = { 45, 10, 15, 4, 2, 78, 1, 0, 69 };
+            int[] daten = { 45, 10, 15, 4,};
             foreach (int i in daten)
             {
                 Console.WriteLine(i);
