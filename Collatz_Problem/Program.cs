@@ -33,69 +33,55 @@ namespace Collatz_Problem_Methoden_Übung
             {
                 if (x != 1)
                 {
-
-
-
                     if (x % 2 == 0)
                     {
-                        x = x / 2;
                         Console.WriteLine(x);
-                        Console.ReadKey();
+                        x = x / 2;
+                       Console.ReadKey();
                     }
                     else if (x % 2 != 0)
                     {
-                        x = (x * 3) + 1;
                         Console.WriteLine(x);
+                        x = (x * 3) + 1;               
                         Console.ReadKey();
-
                     }
-
                 }
-
                 else if (x == 1)
                 {
-
+                   Console.WriteLine(x);
                     x = (x * 3) + 1;
-
                     counter++;
-                    
-
-
-                }
-                
-
+                }             
             } while (counter != 3);
           
             do
             {
-
-
-                if (x % 2 == 0)
+                if (x != 1)
                 {
-                    x = x / 2;
-                    Console.WriteLine(x);
-                    Console.ReadKey();
+                    if (x % 2 == 0)
+                    {
+                        Console.WriteLine(x);
+                        x = x / 2;                  
+                        Console.ReadKey();
+                    }
+                    else
+                    {
+                        Console.WriteLine(x);
+                        x = (x * 3) + 1;                     
+                        Console.ReadKey();
+                    }
                 }
-                else if (x % 2 != 0)
-                {
-                    x = (x * 3) + 1;
-                    Console.WriteLine(x);
 
-
-
-                }
                 else if (x == 1)
                 {
-
+                    Console.WriteLine(x);
                     x = (x * 3) + 1;
-
-
                     Console.WriteLine("Und schon wieder...");
                     Console.ReadKey();
-
-
+                    Console.Clear();
                 }
-            } while (counter == 9999);
+            } while (counter != 1 );
+            Console.WriteLine("Text");
 
 
             return x;
