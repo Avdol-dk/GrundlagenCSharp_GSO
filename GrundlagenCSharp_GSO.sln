@@ -18,9 +18,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collatz_Problem", "Collatz_Problem\Collatz_Problem.csproj", "{708D41A7-ACCB-41EE-A879-07898CD50C17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Collatz_Problem", "Collatz_Problem\Collatz_Problem.csproj", "{708D41A7-ACCB-41EE-A879-07898CD50C17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collatz_Problem_in_einfach", "Collatz_Problem_in_einfach\Collatz_Problem_in_einfach.csproj", "{3AD8FF88-1252-4467-AD3F-4CE30CE66BD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Collatz_Problem_in_einfach", "Collatz_Problem_in_einfach\Collatz_Problem_in_einfach.csproj", "{3AD8FF88-1252-4467-AD3F-4CE30CE66BD7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Methoden implementieren und aufrufen", "Methoden implementieren und aufrufen\Methoden implementieren und aufrufen.csproj", "{97B7242D-1AE2-4AD1-A920-329AA67BEA02}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,6 +58,10 @@ Global
 		{3AD8FF88-1252-4467-AD3F-4CE30CE66BD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3AD8FF88-1252-4467-AD3F-4CE30CE66BD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3AD8FF88-1252-4467-AD3F-4CE30CE66BD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97B7242D-1AE2-4AD1-A920-329AA67BEA02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97B7242D-1AE2-4AD1-A920-329AA67BEA02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97B7242D-1AE2-4AD1-A920-329AA67BEA02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97B7242D-1AE2-4AD1-A920-329AA67BEA02}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
