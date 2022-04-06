@@ -13,62 +13,109 @@ namespace Methoden_implementieren_und_aufrufen
             short[] Übernachtungen = { 1, 4, 12, 3 };
             double[] Rechnungsbetrag = { 82.46, 329.84, 989.52, 247.38 };
             bool zimmercheck = false;
-            int i = 0;
             string eingabe_string;
             short eingabe_short = 0;
-            bool errorcheck = false;
-            do
+
+
+
+            Console.WriteLine("geben sie einen Wert für Eingabe ein");
+            eingabe_string = Console.ReadLine();
+
+
+
+            bool flag = short.TryParse(eingabe_string, out eingabe_short);
+
+
+
+           
+
+            if (flag == true)
             {
+                //Eingabe Short 
+                var daten = CheckInProgamm(eingabe_short, Zimmernummer, Vorname, Nachname, Übernachtungen, Rechnungsbetrag);
 
-                Console.WriteLine("geben sie einen Wert für Eingabe ein");
-                eingabe_string = Console.ReadLine();
-                
-
-
-                bool flag = short.TryParse(eingabe_string, out eingabe_short);
-                do
+                if(daten.Item1)
                 {
 
+                }
+            }
+            else
+            {
+                //Eingabe String
+                var daten = CheckInProgamm(eingabe_string, Zimmernummer, Vorname, Nachname, Übernachtungen, Rechnungsbetrag);
 
 
-                    if (flag == true)
-                    {
+            }
+            
+            
+            
+            
+
+
+        }  
+        
 
 
 
+        static (bool,short, string, string, short, double) CheckInProgamm(string diff,short[] Zimmernummer, string[] Vorname, string[] Nachname, short[] Übernachtungen, double[] Rechnungsbetrag)
+        {
+           
 
-                        zimmercheck = Zimmernummer[i] == eingabe_short;
-                        if (zimmercheck == true)
-                        {
-                            Console.WriteLine("hat geklappt");
-                            CheckInProgamm(Zimmernummer[i], Vorname[i], Nachname[i], Übernachtungen[i], Rechnungsbetrag[i]);
-                        }
-                        else if (i < Zimmernummer.Length - 1)
-                        {
-                            Console.WriteLine("i++");
-                            ++i;
+            bool checkzahl = false;
+            
 
-                        }
-                        else if (i >= Zimmernummer.Length - 1)
-                        {
-                            Console.WriteLine("i ist zu viel");
-                            Console.WriteLine("Geben sie einen neuen Wert für ihre Eingabe ein ");
-                            errorcheck = true;
+            int i = 0;
+            
+          for(int d = 0; d < Nachname.Length;d++)
+            {
+                if(diff == Nachname[d])
+                {
+                    i = d;
+                    checkzahl = true;
+                }
 
-                        }
-                    }
+            }
 
-                } while (zimmercheck == false);
-
-            } while (errorcheck == true);
+            return (checkzahl,Zimmernummer[i], Vorname[i], Nachname[i], Übernachtungen[i], Rechnungsbetrag[i]);
         }
 
-
-
-        static (short, string, string, short,double) CheckInProgamm(short Zimmernummer, string Vorname, string Nachname, short Übernachtungen, double Rechnungsbetrag)
+        static (bool, short, string, string, short, double) CheckInProgamm(short diff, short[] Zimmernummer, string[] Vorname, string[] Nachname, short[] Übernachtungen, double[] Rechnungsbetrag)
         {
 
 
+            bool checkzahl = false;
+
+            int counter = 0;
+            int i = 0;
+
+            do
+            {
+                checkzahl = diff == Zimmernummer[i];
+                if (checkzahl == false & i < Zimmernummer.Length - 1)
+                {
+                    ++i;
+
+                    Console.WriteLine("0");
+                    checkzahl = false;
+
+
+
+
+                }
+                else if (diff == Zimmernummer[i])
+                {
+                    Console.WriteLine("1");
+
+                    checkzahl = true;
+                }
+                else
+                {
+                    break;
+                }
+
+
+            } while (checkzahl == false);
+            Console.WriteLine(checkzahl);
 
 
 
@@ -80,10 +127,7 @@ namespace Methoden_implementieren_und_aufrufen
 
 
 
-
-            return (1, "1","1",1,1);
+            return (false, Zimmernummer[i], Vorname[i], Nachname[i], Übernachtungen[i], Rechnungsbetrag[i]);
         }
-
-
     }
 }
