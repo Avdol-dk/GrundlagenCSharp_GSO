@@ -17,19 +17,63 @@ namespace Methoden_implementieren_und_aufrufen
             short eingabe_short = 0;
             string eingabe_error = "0";
             bool errorode = false;
+            bool infocode = false;
             
             Console.WriteLine("Wollen sie einen neuen Gast einschreiben? Für ja geben sie j ein, und für nein jede beliebige taste außer j");
             
             var a= Console.ReadLine();
-            if (a == "j")
+            do
             {
-                int i = Vorname.Length;
-                Vorname[i] = Console.ReadLine();
-                Console.WriteLine(Vorname[i]);
-            }
-            
+                if (a == "j")
+                {
+                    Console.Clear();
+                    int VN = Vorname.Length;
+                    if (VN > Vorname.Length - 1)
+                    {
+                        Console.WriteLine("Geben sie den Vorname ein");
+                        Array.Resize(ref Vorname, VN + 1);
+                    }
+                    Vorname[VN] = Console.ReadLine();
+                    if (VN > Nachname.Length - 1)
+                    {
+                        Console.WriteLine("Geben sie den Nachnamen ein");
+                        Array.Resize(ref Nachname, VN + 1);
+                    }
+                    Nachname[VN] = Console.ReadLine();
+                    if (VN > Zimmernummer.Length - 1)
+                    {
+                        Console.WriteLine("geben sie die Zimmernummer ein");
+                        Array.Resize(ref Zimmernummer, VN + 1);
+                    }
+                    Zimmernummer[VN] = Convert.ToInt16(Console.ReadLine());
 
-            Console.WriteLine("geben sie einen Wert für Eingabe ein");
+
+                    if (VN > Übernachtungen.Length - 1)
+                    {
+                        Console.WriteLine("geben sie die Anzahl der Übernachtungen ein");
+                        Array.Resize(ref Übernachtungen, VN + 1);
+                    }
+                    Übernachtungen[VN] = Convert.ToInt16(Console.ReadLine());
+                    if (VN > Rechnungsbetrag.Length - 1)
+                    {
+                        Array.Resize(ref Rechnungsbetrag, VN + 1);
+                    }
+                    Rechnungsbetrag[VN] = 82.46 * Übernachtungen[VN];
+                    Console.WriteLine("{0},{1} besetzt Zimmer {2} für {3} Tage und bezahlt dafür {4} Euro", Vorname[VN], Nachname[VN], Zimmernummer[VN], Übernachtungen[VN], Rechnungsbetrag[VN]);
+
+                    Console.WriteLine("Wollen sie noch einen Gast hinzufügen?Für ja geben sie j ein, und für nein jede beliebige taste außer j");
+                    var dak = Console.ReadLine();
+                    if (dak == "j")
+                    {
+                        infocode = true;
+                        
+                    }
+                    Console.Clear();
+                }
+            } while (infocode == true);
+
+
+              Console.WriteLine("geben sie einen Wert für Eingabe ein");
             do
             {
                 eingabe_string = Console.ReadLine();
@@ -40,7 +84,7 @@ namespace Methoden_implementieren_und_aufrufen
                     var daten = CheckInProgamm(eingabe_short, Zimmernummer, Vorname, Nachname, Übernachtungen, Rechnungsbetrag);
                     while (daten.Item1 == true)
                     {
-                        Console.WriteLine("{0},{1} besetzt Zimmer {2} für {3} Tage und bezahlt dafür {4} Euro", daten.Item4, daten.Item3, daten.Item2, daten.Item5, daten.Item6);
+                        Console.WriteLine("{0},{1} besetzt Zimmer {2} für {3} Tage und bezahlt dafür {4:F2} Euro", daten.Item4, daten.Item3, daten.Item2, daten.Item5, daten.Item6);
                         break;
                     }
                     while (daten.Item1 == false)
@@ -65,8 +109,6 @@ namespace Methoden_implementieren_und_aufrufen
                         errorode = true;
                         break;
                     }
-
-
                 }
             } while (checkcheck == false);
           
