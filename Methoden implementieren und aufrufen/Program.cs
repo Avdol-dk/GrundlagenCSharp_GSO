@@ -15,28 +15,17 @@ namespace Methoden_implementieren_und_aufrufen
             bool zimmercheck = false;
             string eingabe_string;
             short eingabe_short = 0;
-
-
-
             Console.WriteLine("geben sie einen Wert für Eingabe ein");
             eingabe_string = Console.ReadLine();
-
-
-
             bool flag = short.TryParse(eingabe_string, out eingabe_short);
-
-
-
-           
-
             if (flag == true)
             {
                 //Eingabe Short 
                 var daten = CheckInProgamm(eingabe_short, Zimmernummer, Vorname, Nachname, Übernachtungen, Rechnungsbetrag);
 
-                if(daten.Item1)
+                if(daten.Item1 == true)
                 {
-
+                    Console.WriteLine($"Herr/Frau [}34##");
                 }
             }
             else
@@ -88,46 +77,16 @@ namespace Methoden_implementieren_und_aufrufen
             int counter = 0;
             int i = 0;
 
-            do
+            for (int d = 0; d < Zimmernummer.Length; d++)
             {
-                checkzahl = diff == Zimmernummer[i];
-                if (checkzahl == false & i < Zimmernummer.Length - 1)
+                if (diff == Zimmernummer[d])
                 {
-                    ++i;
-
-                    Console.WriteLine("0");
-                    checkzahl = false;
-
-
-
-
-                }
-                else if (diff == Zimmernummer[i])
-                {
-                    Console.WriteLine("1");
-
+                    i = d;
                     checkzahl = true;
                 }
-                else
-                {
-                    break;
-                }
-
-
-            } while (checkzahl == false);
+            }
             Console.WriteLine(checkzahl);
-
-
-
-
-
-
-
-
-
-
-
-            return (false, Zimmernummer[i], Vorname[i], Nachname[i], Übernachtungen[i], Rechnungsbetrag[i]);
+            return (checkzahl, Zimmernummer[i], Vorname[i], Nachname[i], Übernachtungen[i], Rechnungsbetrag[i]);
         }
     }
 }
