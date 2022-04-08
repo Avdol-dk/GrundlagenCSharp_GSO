@@ -28,13 +28,14 @@ namespace Methoden_implementieren_und_aufrufen
             var a= Console.ReadLine();
             do
             {
+                infocode = false;
                 global::System.Console.WriteLine("Falls sie doch kein Gast eingeben wollen, geben sie sub ein.");
                 if (a == "j")
                 {
+                    
                     Console.Clear();
                     int VN = Vorname.Length;
-                    if (VN > Vorname.Length - 1)
-                    {
+
                         Console.WriteLine("Geben sie den Vorname ein");
                         Array.Resize(ref Vorname, VN + 1);
                         
@@ -58,7 +59,7 @@ namespace Methoden_implementieren_und_aufrufen
                         
                      } while (doinfo == true);
 
-                    }
+                    
 
                     if (VN > Nachname.Length - 1)
                     {
@@ -133,44 +134,33 @@ namespace Methoden_implementieren_und_aufrufen
                         break;
                     }
                 }
-            } while (checkcheck == false);
-          
+            } while (checkcheck == false);      
         }  
-        
-
-
-
         static (bool,short,string, string, short, double) CheckInProgamm(string diff,short[] Zimmernummer, string[] Vorname, string[] Nachname, short[] Übernachtungen, double[] Rechnungsbetrag)
-        {
-           
-
+        {         
             bool checkzahl = false;
-            
-
             int i = 0;
-            
-          for(int d = 0; d < Nachname.Length;d++)
+            for(int d = 0; d < Nachname.Length;d++)
             {
                 if(diff == Nachname[d])
                 {
                     i = d;
                     checkzahl = true;
                 }
-
             }
-
+            //Beispiel identische nachnamen
+            //count: Anzahl der identischen Nachnamen bestimmen
+            //index_identisch: Indexe der identischen Nachnamen
+            //[2,4]
+            //Elemente_identische: Array mit allen Emelementen die auf den diff passen
+            //Elemente_zn_identische[] = {Zimmernumemr[2],Zimmernumemr[4]};
             return (checkzahl,Zimmernummer[i], Vorname[i], Nachname[i], Übernachtungen[i], Rechnungsbetrag[i]);
         }
-
         static (bool, short, string, string, short, double) CheckInProgamm(short diff, short[] Zimmernummer, string[] Vorname, string[] Nachname, short[] Übernachtungen, double[] Rechnungsbetrag)
         {
-
-
             bool checkzahl = false;
-
             int counter = 0;
             int i = 0;
-
             for (int d = 0; d < Zimmernummer.Length; d++)
             {
                 if (diff == Zimmernummer[d])
@@ -178,8 +168,7 @@ namespace Methoden_implementieren_und_aufrufen
                     i = d;
                     checkzahl = true;
                 }
-            }
-            
+            }  
             return (checkzahl, Zimmernummer[i], Vorname[i], Nachname[i], Übernachtungen[i], Rechnungsbetrag[i]);
         }
     }
