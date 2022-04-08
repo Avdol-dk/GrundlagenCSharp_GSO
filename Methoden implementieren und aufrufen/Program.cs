@@ -6,6 +6,7 @@ namespace Methoden_implementieren_und_aufrufen
     {
         static void Main(string[] args)
         {
+            global::System.Console.WriteLine("Willkommen, das Progamm dient als elektronische Gästeliste. Wenn sie exit eingeben, verlassen sie das Progamm");
 
             short[] Zimmernummer = { 45, 23, 3, 32 };
             string[] Vorname = { "John", "Paul", "George", "Ringo" };
@@ -17,13 +18,17 @@ namespace Methoden_implementieren_und_aufrufen
             short eingabe_short = 0;
             string eingabe_error = "0";
             bool errorode = false;
-            bool infocode = false;
+            bool infocode = false, subinfo = false, doinfo = false;
+
+           
+           
             
             Console.WriteLine("Wollen sie einen neuen Gast einschreiben? Für ja geben sie j ein, und für nein jede beliebige taste außer j");
             
             var a= Console.ReadLine();
             do
             {
+                global::System.Console.WriteLine("Falls sie doch kein Gast eingeben wollen, geben sie sub ein.");
                 if (a == "j")
                 {
                     Console.Clear();
@@ -32,8 +37,29 @@ namespace Methoden_implementieren_und_aufrufen
                     {
                         Console.WriteLine("Geben sie den Vorname ein");
                         Array.Resize(ref Vorname, VN + 1);
+                        
+                     do 
+                     {
+                            Vorname[VN] = Console.ReadLine();
+                            if (Vorname[VN] == "exit")
+                            {
+                                Console.WriteLine("Das Progamm wird geschlossen...");
+                                Environment.Exit(0);
+                            }
+                            else if(Vorname[VN] == "sub")
+                            {
+                                doinfo = true;
+                            } 
+                            else if(doinfo != short.TryParse(Vorname[VN], out eingabe_short))
+                            {
+                                Console.WriteLine("geben sie einen Gültigen Vornamen ein");
+                                doinfo = true;
+                            }                 
+                        
+                     } while (doinfo == true);
+
                     }
-                    Vorname[VN] = Console.ReadLine();
+
                     if (VN > Nachname.Length - 1)
                     {
                         Console.WriteLine("Geben sie den Nachnamen ein");
@@ -46,8 +72,6 @@ namespace Methoden_implementieren_und_aufrufen
                         Array.Resize(ref Zimmernummer, VN + 1);
                     }
                     Zimmernummer[VN] = Convert.ToInt16(Console.ReadLine());
-
-
                     if (VN > Übernachtungen.Length - 1)
                     {
                         Console.WriteLine("geben sie die Anzahl der Übernachtungen ein");
@@ -65,8 +89,7 @@ namespace Methoden_implementieren_und_aufrufen
                     var dak = Console.ReadLine();
                     if (dak == "j")
                     {
-                        infocode = true;
-                        
+                        infocode = true;                  
                     }
                     Console.Clear();
                 }
