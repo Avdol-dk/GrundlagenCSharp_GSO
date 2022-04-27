@@ -6,6 +6,7 @@ namespace Methoden_implementieren_und_aufrufen
     {
         static void Main(string[] args)
         {
+            //bearbeitet von Deniz Dersim Kest und Samir Yusuf Muric
             global::System.Console.WriteLine("Willkommen, das Progamm dient als elektronische Gästeliste. Wenn sie exit eingeben, verlassen sie das Progamm");
 
             short[] Zimmernummer = { 45, 23, 3, 32 };
@@ -29,7 +30,7 @@ namespace Methoden_implementieren_und_aufrufen
             do
             {
                 infocode = false;
-                global::System.Console.WriteLine("Falls sie doch kein Gast eingeben wollen, geben sie sub ein.");
+                Console.WriteLine("Falls sie doch kein Gast eingeben wollen, geben sie sub ein.");
                 if (a == "j")
                 {
                     
@@ -41,7 +42,8 @@ namespace Methoden_implementieren_und_aufrufen
                         
                      do 
                      {
-                            Vorname[VN] = Console.ReadLine();
+                        doinfo = false;
+                        Vorname[VN] = Console.ReadLine();
                             if (Vorname[VN] == "exit")
                             {
                                 Console.WriteLine("Das Progamm wird geschlossen...");
@@ -55,12 +57,8 @@ namespace Methoden_implementieren_und_aufrufen
                             {
                                 Console.WriteLine("geben sie einen Gültigen Vornamen ein");
                                 doinfo = true;
-                            }                 
-                        
+                            }                                       
                      } while (doinfo == true);
-
-                    
-
                     if (VN > Nachname.Length - 1)
                     {
                         Console.WriteLine("Geben sie den Nachnamen ein");
